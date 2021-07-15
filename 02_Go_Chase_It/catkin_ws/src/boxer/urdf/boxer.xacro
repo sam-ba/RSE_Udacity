@@ -3,7 +3,7 @@
 <robot name="boxer" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <link name="robot_footprint"></link>
-  <xacro:include filename="$(find boxer/urdf/my_robot.gazebo)"/>
+  <xacro:include filename="$(find boxer)/urdf/my_robot.gazebo"/>
 
   <joint name="robot_footprint_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
