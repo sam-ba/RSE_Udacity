@@ -1,2 +1,0 @@
-my_robot
--DCATKIN_DEVEL_PREFIX=/home/samuel/RSE_Udacity/RSE_Udacity/02_Go_Chase_It/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/samuel/RSE_Udacity/RSE_Udacity/02_Go_Chase_It/catkin_ws/install -G Unix Makefiles

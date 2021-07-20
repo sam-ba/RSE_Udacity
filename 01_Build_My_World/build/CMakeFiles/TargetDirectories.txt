@@ -1,3 +1,0 @@
-/home/samuel/boxer/build/CMakeFiles/rebuild_cache.dir
-/home/samuel/boxer/build/CMakeFiles/welcome.dir
-/home/samuel/boxer/build/CMakeFiles/edit_cache.dir
