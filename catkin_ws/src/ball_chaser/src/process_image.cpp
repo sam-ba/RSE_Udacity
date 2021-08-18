@@ -43,6 +43,8 @@ void process_image_callback(const sensor_msgs::Image img)
         }
         else{
             ball_detected = false;
+                step = int(i/3) % img.width;
+            break;
         }
     }
 
