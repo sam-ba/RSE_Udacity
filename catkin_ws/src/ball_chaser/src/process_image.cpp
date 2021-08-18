@@ -29,8 +29,8 @@ void process_image_callback(const sensor_msgs::Image img)
 {
     int white_pixel = 255;
     
-    bool ball_detected = false;
     int step = -1;
+    bool ball_detected = false;
 
     // TODO: Loop through each pixel in the image and check if there's a bright white one
     for(int i = 0; i < (img.height * img.step); i++){
@@ -38,30 +38,32 @@ void process_image_callback(const sensor_msgs::Image img)
            img.data[i+1] == white_pixel &&
            img.data[i+2] == white_pixel)
         {
-                ball_detected = true;
                 step = i % img.step;
+                ball_detected = true; 
+                break;
         }
         else{
             ball_detected = false;
-                step = int(i/3) % img.width;
-            break;
         }
     }
 
     // Then, identify if this pixel falls in the left, mid, or right side of the image
-    if(ball_detected == 1){
+    if(ball_detected == true){
         // Depending on the white ball position, call the drive_bot function and pass velocities to it
         if(step <= img.step * 0.3 && step >= 0){
             // if the pixel is in the left area, turn left
             drive_robot(0.0,0.5);
+            ROS_INFO("Turning Left");
         }
         else if(step > img.step * 0.7 && step <= img.step){
             // if the pixel is in the right area, turn right
             drive_robot(0.0,-0.5);
+            ROS_INFO("Turning Right");
         }
-        else if(step != -1){
+        else if((step > img.step * 0.3 && step >=0 ) && (step <= img.step * 0.7 && step <= img.step)){
             // if the pixel is in the middle area, move forward in a straight line
             drive_robot(0.5,0.0);
+            ROS_INFO("Moving forward");
         }
     }
     // Request a stop when there's no white ball seen by the camera
