@@ -1,2 +1,4 @@
 # RSE_Udacity
-Project lessons from the Udacity Robotics Software Engineer nanodegree program
+Lesson scripts from the Robotics Software Engineer nanodegree program from udacity. 
+
+Project files are stored in RSE_Udacity_Projects repository. 
